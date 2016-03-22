@@ -8,9 +8,8 @@ class operatorUI
     }
     public function pickTask($task)
     {
-        serviceFactory.getService($task);
+        taskFactory::create($task);
     }
 
     
 }
-

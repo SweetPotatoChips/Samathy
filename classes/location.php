@@ -6,6 +6,14 @@ class location  //Represents a location in the DB
     private $latitude;
     private $longditude;
 
+    public function __construct($name,$latitude, $longditude)
+    {
+        //TODO Should check if service already exists. 
+        //IF it does, then fill this class with that location data.
+        //Else just fill it with the data we've been given
+
+    }
+
     public function getName()
     {
         return $this->$name;
