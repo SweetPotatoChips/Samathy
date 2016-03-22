@@ -1,6 +1,7 @@
 <?php
 
-class taskFactory implements factory   //Returns objects for the services Is a singleton
+//class taskFactory implements factory   //Returns objects for the services Is a singleton
+class taskFactory    //Returns objects for the services Is a singleton
 {
     private static $instance;
 

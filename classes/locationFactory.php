@@ -1,7 +1,8 @@
 <?php
 
 
-class locationFactory implements factory   //Creates new location object
+//class locationFactory implements factory   //Creates new location object
+class locationFactory    //Creates new location object
 {
 
     private static $instance;

@@ -10,6 +10,12 @@ class operatorUI
     {
         taskFactory::create($task);
     }
+    
+    public function setError($err)
+    {
+        $this->$errorString = $err;
+        $this->$error = true;
+    }
 
     
 }

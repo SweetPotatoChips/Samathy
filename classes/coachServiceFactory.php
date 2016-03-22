@@ -1,6 +1,7 @@
 <?php
 
-class coachServiceFactory implements factory
+//class coachServiceFactory implements factory
+class coachServiceFactory 
 {
     static $instance;
     public static function getInstance()

@@ -16,7 +16,7 @@ include "includes/header.php";
 
 $UI = new operatorUI();  //We want a new UI object
 
-if ($_GET["taskSelected"] != null)  //If this is the form response
+if (isset($_GET["taskSelected"]))  //If this is the form response
 {
     $task = $UI.pickTask($_POST['task']);  //Create a service object for the correct task
 
@@ -61,7 +61,8 @@ if ($_GET["taskSelected"] != null)  //If this is the form response
 
 }
 
-$UI.showUI();             //Show the initial UI!
+echo "got here though";
+$UI::showUI();             //Show the initial UI!
 
     //We should have a UI now. 
 ?>
