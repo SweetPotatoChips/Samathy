@@ -144,12 +144,12 @@ class operatorUI
 
     public function showUI()    //Displays the task selection box
     {
-        if ($this->$output == null || $this->$output === "")
-        {
+//        if ($this->$output == null)
+//        {
             echo $this->$defaultOutput;
-        }
-        else
-        {   echo $this->$output;    }
+//        }
+//        else
+//        {   echo $this->$output;    }
 
     }
     public function pickTask($task)
@@ -162,11 +162,12 @@ class operatorUI
         $this->$errorString = $err;
         $this->$error = true;
     }
-    
-    public function __construct()
+
+    public function setOutput($out)
     {
-        $this->error = false;
+        $this->$output = $out;
     }
+    
 
     
 }

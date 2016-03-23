@@ -32,6 +32,7 @@ if ($_GET["task"] == "1")  //If this is the form response
         {
             $UI.setError("Task: ".$task.getName()." Failed with error: ".$task.getError()); 
         }
+        $UI.setOutput($task.getOutput());   //Set the output
     }
 
     else if ($task.get_Name() === "delete")
@@ -41,6 +42,7 @@ if ($_GET["task"] == "1")  //If this is the form response
         {
             $UI.setError("Task: ".$task.getName()." Failed with error: ".$task.getError()); 
         }
+        $UI.setOutput($task.getOutput());
 
     }
     else if ($task.get_Name() === "amend")
@@ -50,6 +52,7 @@ if ($_GET["task"] == "1")  //If this is the form response
         {
             $UI.setError("Task: ".$task.getName()." Failed with error: ".$task.getError()); 
         }
+        $UI.setOutput($task.getOutput());
     }
     else if ($task.get_Name() === "bookingReport")  //Booking report requires no args
     {   
@@ -58,11 +61,13 @@ if ($_GET["task"] == "1")  //If this is the form response
             $UI.setError("Task: ".$task.getName()." Failed with error: ".$task.getError()); 
         }
 
+        $UI.setOutput($task.getOutput());   
+
     }
 
 
 }
-$UI::showUI();             //Show the initial UI!
+$UI->showUI();             //Show the initial UI!
 
     //We should have a UI now. 
 
