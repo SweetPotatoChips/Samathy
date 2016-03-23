@@ -20,12 +20,13 @@ class addService implements task   //Takes a service object, and adds it to the 
 
     public function getName()
     {
-        return $this->$name;
+        return $this->name;
     }
 
     public function performTask($args)
     {
         $this->add($args);
+
 
         return null; //True on success
         //$this->$error =  "Could not add to database"; Set error string on failure
@@ -35,17 +36,23 @@ class addService implements task   //Takes a service object, and adds it to the 
 
     private function add($s)
     {
+        $this->output = 
+            ' <div clas="container-fluid">
+                <h3 class="text-center"> Added New Coach Service: </h3>
+                <p> Origin: '.$s->getLocations()[0].'</p></div>
+                <p> Destination: '.$s->getLocations()[1].'</p>
+            ';
     }
 
     public function getError()
-    {   return $this->$error;   }
+    {   return $this->error;   }
     
     public function getOutput()
     {
-        if ($this->$error == null)  //Return any output string
-        {   return $this->$output;}
+        if ($this->error == null)  //Return any output string
+        {   return $this->output;}
         else
-        {   return $this->$error;   }   //Return an error if we have one instead
+        {   return $this->error;   }   //Return an error if we have one instead
     }
 }
 
@@ -57,7 +64,7 @@ class amendService  implements task//Takes a field, and some data, and a service
 
     public function getName()
     {
-        return $this->$name;
+        return $this->name;
     }
 
     public function performTask($args)
@@ -73,14 +80,14 @@ class amendService  implements task//Takes a field, and some data, and a service
     }
 
     public function getError()
-    {   return $this->$error;   }
+    {   return $this->error;   }
 
     public function getOutput()
     {
-        if ($this->$error == null)  //Return any output string
-        {   return $this->$output;}
+        if ($this->error == null)  //Return any output string
+        {   return $this->output;}
         else
-        {   return $this->$error;   }   //Return an error if we have one instead
+        {   return $this->error;   }   //Return an error if we have one instead
     }
 }
 

@@ -17,31 +17,31 @@ class coachService   //Represents one service in the DB
             //If it does, then fill the data with that data and somehow notify that this service already exists?
         }
 
-        $this->$origin = $origin;
-        $this->$destination = $dest;
-        $this->$distance = $distance;
-        $this->$time = $time;
+        $this->origin = $origin;
+        $this->destination = $dest;
+        $this->distance = $distance;
+        $this->time = $time;
     }
         
 
 
     public function getLocations()
     {
-        $ret['origin'] = $this->$origin;
-        $ret['destination'] = $this->$destination;
+        $ret['origin'] = $this->origin;
+        $ret['destination'] = $this->destination;
         return $ret;
     }
     public function getStops()
     {
-        return $this->$stops;
+        return $this->stops;
     }
     public function getTime()
     {
-        return $this->$time;
+        return $this->time;
     }
     public function getDistance()
     {
-        return $this->$distance;
+        return $this->distance;
     }
 
 }

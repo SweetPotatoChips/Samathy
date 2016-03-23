@@ -154,7 +154,7 @@ class operatorUI
     }
     public function pickTask($task)
     {
-        taskFactory::create($task);
+        return taskFactory::create($task);
     }
     
     public function setError($err)

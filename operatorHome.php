@@ -14,60 +14,63 @@ include "includes/classHeaderInclude.php";
 include "includes/bootstrap.php";
 include "includes/header.php";
 
+
 $UI = new operatorUI();  //We want a new UI object
 
-if ($_GET["task"] == "1")  //If this is the form response
+if ($_GET["task"] != null)  //If this is the form response
 {
-    $task = $UI.pickTask($_POST['task']);  //Create a service object for the correct task
+    $task = $UI->pickTask($_GET['task']);  //Create a service object for the correct task
 
     //TODO We can probably concatinate a few of these Ifs into one if statement
 
-    if ($task.getname() == "add")   //If the task we selected was to add a new coach
+    if ($task->getName() == "add")   //If the task->we selected was to add a new coach
     {
-        $newService = coachServiceFactory::create(locationFactory::create($_POST['origin'], $_POST['lat'],$_POST['long']),locationFactory::create($_POST['dest'],$_POST['lat'],$_POST['long']), $_POST['distance'], $_POST['time'], true);
+        echo  $_POST['origin'].$_POST['originlat'].$_POST['originlong'].$_POST['dest'].$_POST['destlat'].$_POST['destlong']. $_POST['distance'].$_POST['time'];
 
-        if (!$task.performTask($newService))    // Create the new service - Returns false on fail
+        $newService = coachServiceFactory::create(locationFactory::create($_POST['origin'], $_POST['originlat'],$_POST['originlong']),locationFactory::create($_POST['dest'],$_POST['destlat'],$_POST['destlong']), $_POST['distance'], $_POST['time'], true);
+
+        if (!$task->performTask($newService))    // Create the new service - Returns false on fail
         {
-            $UI.setError("Task: ".$task.getName()." Failed with error: ".$task.getError()); 
+            $UI->setError("Task: ".$task->getName()." Failed with error: ".$task->getError()); 
         }
-        $UI.setOutput($task.getOutput());   //Set the output
+        $UI->setOutput($task->getOutput());   //Set the output
     }
 
-    else if ($task.get_Name() === "delete")
+    else if ($task->getName() === "delete")
     {   
         $service = coachservicefactory::create(locationfactory::create($_post['origin'], $_post['lat'],$_post['long']),locationfactory::create($_post['dest'],$_post['lat'],$_post['long']), $_post['distance'], $_post['time'], true);
-        if (!$task.performTask($service))    // Create the new service - Returns false on fail
+        if (!$task->performTask($service))    // Create the new service - Returns false on fail
         {
-            $UI.setError("Task: ".$task.getName()." Failed with error: ".$task.getError()); 
+            $UI->setError("Task: ".$task->getName()." Failed with error: ".$task->getError()); 
         }
-        $UI.setOutput($task.getOutput());
+        $UI->setOutput($task->getOutput());
 
     }
-    else if ($task.get_Name() === "amend")
+    else if ($task->getName() === "amend")
     {   
         $service = coachservicefactory::create(locationfactory::create($_post['origin'], $_post['lat'],$_post['long']),locationfactory::create($_post['dest'],$_post['lat'],$_post['long']), $_post['distance'], $_post['time'], true);
-        if (!$task.performTask($_POST['fieldname'],$_POST['data'],$service))    // Create the new service - Returns false on fail
+        if (!$task->performTask($_POST['fieldname'],$_POST['data'],$service))    // Create the new service - Returns false on fail
         {
-            $UI.setError("Task: ".$task.getName()." Failed with error: ".$task.getError()); 
+            $UI->setError("Task: ".$task->getName()." Failed with error: ".$task->getError()); 
         }
-        $UI.setOutput($task.getOutput());
+        $UI->setOutput($task->getOutput());
     }
-    else if ($task.get_Name() === "bookingReport")  //Booking report requires no args
+    else if ($task->get_Name() === "bookingReport")  //Booking report requires no args
     {   
-        if (!$task.performTask($_POST['fieldname'],$_POST['data'],$service))    // Create the new service - Returns false on fail
+        if (!$task->performTask($_POST['fieldname'],$_POST['data'],$service))    // Create the new service - Returns false on fail
         {
-            $UI.setError("Task: ".$task.getName()." Failed with error: ".$task.getError()); 
+            $UI->setError("Task: ".$task->getName()." Failed with error: ".$task->getError()); 
         }
 
-        $UI.setOutput($task.getOutput());   
+        $UI->setOutput($task->getOutput());   
 
     }
 
 
 }
-$UI->showUI();             //Show the initial UI!
+$UI->showUI();             //Show the initial UI->
 
-    //We should have a UI now. 
+    //We should have a UI->now. 
 
 
 ?>
