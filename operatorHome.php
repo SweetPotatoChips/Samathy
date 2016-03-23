@@ -21,8 +21,6 @@ if ($_GET["task"] == "1")  //If this is the form response
     $task = $UI.pickTask($_POST['task']);  //Create a service object for the correct task
 
     //TODO We can probably concatinate a few of these Ifs into one if statement
-    //
-    //TODO We need to add sending the output of the tasks to operatorUI
 
     if ($task.getname() == "add")   //If the task we selected was to add a new coach
     {
