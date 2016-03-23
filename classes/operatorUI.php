@@ -2,13 +2,14 @@
 
 class operatorUI
 {
-    public function showUI()    //Displays the task selection box
-    {
 
-        //TODO Put the form stuff into a function!
+    private $error;
+    private $errorString;
+    private $output;
 
-        echo '
-        <div class="row">
+    //TODO Put the form stuff into a function!
+    private $defaultOutput = 
+         '<div class="row">
             <div class="col-xs-6 col-md-4">
                 <h1>Operator Home</h1>
             </div>
@@ -16,9 +17,6 @@ class operatorUI
                 <h3>Pick an operation to perform</h3>";
             </div>
         </div>
-        ';
-        //Set the divs for the forms for the options.
-        echo '                  
         <div class="row">
             <div class="col-xs-6 col-md-4">
                 <p class="text-center"> Add</p>
@@ -144,6 +142,15 @@ class operatorUI
         </div>
         ';
 
+    public function showUI()    //Displays the task selection box
+    {
+        if ($this->$output == null || $this->$output === "")
+        {
+            echo $this->$defaultOutput;
+        }
+        else
+        {   echo $this->$output;    }
+
     }
     public function pickTask($task)
     {
@@ -154,6 +161,11 @@ class operatorUI
     {
         $this->$errorString = $err;
         $this->$error = true;
+    }
+    
+    public function __construct()
+    {
+        $this->error = false;
     }
 
     
