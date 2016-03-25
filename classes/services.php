@@ -105,7 +105,7 @@ class addService implements task   //Takes a service object, and adds it to the 
 
 class amendService  implements task//Takes a field, and some data, and a service object and makes a change to that service.
 {
-    private $name = "add";
+    private $name = "amend";
     private $error = null;
     private $output = null;
 
@@ -179,7 +179,7 @@ class amendService  implements task//Takes a field, and some data, and a service
 
 class deleteService implements task//Takes a service object, and removes it from the database. Might also remove any bookings attached to this service.
 {
-    private $name = "add";
+    private $name = "delete";
     private $error = null;
     private $output = null;
 
@@ -253,7 +253,7 @@ class deleteService implements task//Takes a service object, and removes it from
 
 class bookingReport implements task //This is technically George's thing, i think...
 {
-    private $name = "add";
+    private $name = "bookingReport";
     private $error = null;
     private $output = null;
     
