@@ -192,7 +192,7 @@ class deleteService implements task//Takes a service object, and removes it from
     }
     public function getName()
     {
-        return $this->$name;
+        return $this->name;
     }
 
     public function performTask($args)
