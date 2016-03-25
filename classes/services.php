@@ -208,14 +208,14 @@ class deleteService implements task//Takes a service object, and removes it from
     }
 
     public function getError()
-    {   return $this->$error;   }
+    {   return $this->error;   }
 
     public function getOutput()
     {
-        if ($this->$error == null)  //Return any output string
-        {   return $this->$output;}
+        if ($this->error == null)  //Return any output string
+        {   return $this->output;}
         else
-        {   return $this->$error;   }   //Return an error if we have one instead
+        {   return $this->error;   }   //Return an error if we have one instead
     }
 
     public function getNameTest()
@@ -266,7 +266,7 @@ class bookingReport implements task //This is technically George's thing, i thin
     }
     public function getName()
     {
-        return $this->$name;
+        return $this->name;
     }
 
     public function performTask($args)
@@ -283,15 +283,15 @@ class bookingReport implements task //This is technically George's thing, i thin
     }
 
     public function getError()
-    {   return $this->$error;   }
+    {   return $this->error;   }
 
 
     public function getOutput()
     {
-        if ($this->$error == null)  //Return any output string
-        {   return $this->$output;}
+        if ($this->error == null)  //Return any output string
+        {   return $this->output;}
         else
-        {   return $this->$error;   }   //Return an error if we have one instead
+        {   return $this->error;   }   //Return an error if we have one instead
     }
 
     public function getNameTest()
