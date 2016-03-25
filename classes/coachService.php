@@ -45,13 +45,13 @@ class coachService   //Represents one service in the DB
         return $this->distance;
     }
 
-    public function test()
+    public function test($origin, $dest, $distance, $time)
     {
         echo "<p>Testing coachService</p>";
         echo "<p>".$this->getLocationsTest()."</p>";
         echo "<p>".$this->getTimeTest()."</p>";
         echo "<p>".$this->getdistanceTest()."</p>";
-        echo "<p>".$this->checkInput()."</p>";
+        echo "<p>".$this->checkInput($origin, $dest, $distance, $time)."</p>";
     }
 
     public function getLocationsTest()
@@ -84,7 +84,7 @@ class coachService   //Represents one service in the DB
     public function checkInput($origin, $dest, $distance,$time)
     {
         
-        if ($this->origin != $origin)
+        if ($this->origin->getName() != $origin->getName())
         {   return "checkInput Failed on origin";   }
         if ($this->destination != $dest)
         {   return "checkInput Failed on dest";   }
