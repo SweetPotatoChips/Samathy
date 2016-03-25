@@ -58,7 +58,7 @@ class location  //Represents a location in the DB
 
     public function checkInput($n, $lt, $lng)
     {
-        if ($this->name === $n && $this->latitude === lt && $this->longditude === lng)
+        if ($this->name === $n && $this->latitude === $lt && $this->longditude === $lng)
         {   return "inputs valid. Location Factory passed"; }
         else
         {   return "Inputs invalid. Location Factory failed"; }
