@@ -29,5 +29,43 @@ class location  //Represents a location in the DB
         $ret['long'] = $this->longditude;
         return $ret;
     }
+
+    public function test($name, $lat, $long)
+    {
+        echo "<p>testing location</p>";
+        echo "<p>".$this->getNameTest()."</p>";
+        echo "<p>".$this->getLatLongTest()."</p>";
+        echo "<p>".$this->checkInput($name, $lat,$long)."</p>";
+    }
+
+
+    public function getNameTest()
+    {
+        if ($this->getName === $this->name)
+        {   return "getName() passed";  }
+        else
+        {   return "getName() failed";  }
+    }
+
+    public function getLatLongTest()
+    {
+        $data = $this->getLatLong();
+        if($data['lat'] === $this->latitude and $data['long'] === $this->longditude)
+        {   return "getLatLong() passed";   }
+        else
+        {   return "getlatLong failed";     }
+    }
+
+    public function checkInput($n, $lt, $lng)
+    {
+        if ($this->name === $n && $this->lat === lt && $this->long === lng)
+        {   return "inputs valid. Location Factory passed"; }
+        else
+        {   return "Inputs invalid. Location Factory failed";   }
+    }
+
+                
+                
+
 }
 

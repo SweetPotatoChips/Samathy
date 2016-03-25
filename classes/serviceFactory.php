@@ -16,7 +16,6 @@ class taskFactory    //Returns objects for the services Is a singleton
 
     public static function create($service)
     {
-        echo "creating serviec";
         if ($service === "add")
         {   return new addService();    }
         else if ($service === "delete")

@@ -7,6 +7,15 @@ class operatorUI
     private $errorString;
     private $output;
 
+    public function test()
+    {
+        echo "<p>Testing operatorUI</p>";
+        echo "<p>".$this->setErrorTest()."</p>";
+        echo "<p>".$this->setOutputTest()."</p>";
+        echo "<p>".$this->pickTaskTest()."</p>";
+    }
+
+
     //TODO Put the form stuff into a function!
     private $defaultOutput = 
          '<div class="row">
@@ -171,6 +180,76 @@ class operatorUI
     public function __construct()
     {
     }
+
+    //Uni tests
+    public function setErrorTest()
+    {
+        echo "Testing setError()";
+        $string = "This is a test String";
+        $this->setError($string);
+
+        if ($this->errorString === $string and $this->error === true)
+        {   return "setError passed";    }
+        else 
+        {   return "setError Failed";   }
+    }
+
+    public function setOutputTest()
+    {
+        echo "Testing setOutput()";
+        $string = "This is a test String";
+        $this->setOutput($string);
+
+        if ($this->output === $string)
+        {   return "setOutput Passed";    }
+        else 
+        {   return "setOutputFailed";   }
+    }
+
+    public function pickTaskTest()
+    {
+        echo "testing pickTask()";
+        if (get_class($this->pickTask("add")) != 'addService')
+        {
+            return "pickTask() failed on picking add";
+        }
+        if (get_class($this->pickTask("delete")) != 'deleteService')
+        {
+            return "pickTask() failed on picking delete";
+        }
+        if (get_class($this->pickTask("amend")) != 'amendService')
+        {
+            return "pickTask() failed on picking amend";
+        }
+        if (get_class($this->pickTask("amend")) != 'amendService')
+        {
+            return "pickTask() failed on picking amend";
+        }
+        if (get_class($this->pickTask("bookingReport")) != 'bookingReport')
+        {
+            return "pickTask() failed on picking BookinggReport";
+        }
+        return "pickTask() Passes";           
+    }
+
+    public function showUITest()
+    {
+        $this->output = null;
+        if ($this->showUI() != $this->defaultOutput)
+        {   return "showUI() failed on showing default UI"; }
+
+        $this->output = "Modified Output";
+        if ($this->showUI() != "Modified Output")
+        {   return "showUI() failed on showing A modified Output UI"; }
+        else
+        {   return "showUI() passed";   }
+
+    }
+
+
+
+
+
     
 
     

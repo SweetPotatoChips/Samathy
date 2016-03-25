@@ -17,6 +17,15 @@ class addService implements task   //Takes a service object, and adds it to the 
     private $output = null;
 
 
+    public function test()
+    {
+        echo "<p>Testing ".$this->name."</p>";
+        echo "<p>".$this->getNameTest()."</p>";
+        echo "<p>".$this->getErrorTest()."</p>";
+        echo "<p>".$this->getOutputTest()."</p>";
+    }
+
+
 
     public function getName()
     {
@@ -54,6 +63,44 @@ class addService implements task   //Takes a service object, and adds it to the 
         else
         {   return $this->error;   }   //Return an error if we have one instead
     }
+
+    public function getNameTest()
+    {
+        if ($this->getName() === $this->name )
+        {   return "getName() passed";  }
+        else
+        {   return "getName() failed";  }
+    }
+
+    public function getErrorTest()
+    {
+        $error = "ERROR TEST";
+        $this->error = $error;
+
+        if ($this->getError() === $error)
+        {   return "getError() passed"; }
+        else
+        {   return "getError() failed";  }
+
+    }
+
+    public function getOutputTest()
+    {
+        $output = "ERROR TEST";
+        $this->output = $output;
+
+        if ($this->getOutput() === $output)
+        {   return "getOutput() passed"; }
+        else
+        {   return "getOutput() failed";  }
+
+    }
+
+
+
+
+
+
 }
 
 class amendService  implements task//Takes a field, and some data, and a service object and makes a change to that service.
@@ -62,6 +109,13 @@ class amendService  implements task//Takes a field, and some data, and a service
     private $error = null;
     private $output = null;
 
+    public function test()
+    {
+        echo "<p>Testing ".$this->name."</p>";
+        echo "<p>".$this->getNameTest()."</p>";
+        echo "<p>".$this->getErrorTest()."</p>";
+        echo "<p>".$this->getOutputTest()."</p>";
+    }
     public function getName()
     {
         return $this->name;
@@ -89,6 +143,38 @@ class amendService  implements task//Takes a field, and some data, and a service
         else
         {   return $this->error;   }   //Return an error if we have one instead
     }
+
+    public function getNameTest()
+    {
+        if ($this->getName() === $this->name )
+        {   return "getName() passed";  }
+        else
+        {   return "getName() failed";  }
+    }
+
+    public function getErrorTest()
+    {
+        $error = "ERROR TEST";
+        $this->error = $error;
+
+        if ($this->getError() === $error)
+        {   return "getError() passed"; }
+        else
+        {   return "getError() failed";  }
+
+    }
+
+    public function getOutputTest()
+    {
+        $output = "ERROR TEST";
+        $this->output = $output;
+
+        if ($this->getOutput() === $output)
+        {   return "getOutput() passed"; }
+        else
+        {   return "getOutput() failed";  }
+
+    }
 }
 
 class deleteService implements task//Takes a service object, and removes it from the database. Might also remove any bookings attached to this service.
@@ -97,6 +183,13 @@ class deleteService implements task//Takes a service object, and removes it from
     private $error = null;
     private $output = null;
 
+    public function test()
+    {
+        echo "<p>Testing ".$this->name."</p>";
+        echo "<p>".$this->getNameTest()."</p>";
+        echo "<p>".$this->getErrorTest()."</p>";
+        echo "<p>".$this->getOutputTest()."</p>";
+    }
     public function getName()
     {
         return $this->$name;
@@ -124,6 +217,38 @@ class deleteService implements task//Takes a service object, and removes it from
         else
         {   return $this->$error;   }   //Return an error if we have one instead
     }
+
+    public function getNameTest()
+    {
+        if ($this->getName() === $this->name )
+        {   return "getName() passed";  }
+        else
+        {   return "getName() failed";  }
+    }
+
+    public function getErrorTest()
+    {
+        $error = "ERROR TEST";
+        $this->error = $error;
+
+        if ($this->getError() === $error)
+        {   return "getError() passed"; }
+        else
+        {   return "getError() failed";  }
+
+    }
+
+    public function getOutputTest()
+    {
+        $output = "ERROR TEST";
+        $this->output = $output;
+
+        if ($this->getOutput() === $output)
+        {   return "getOutput() passed"; }
+        else
+        {   return "getOutput() failed";  }
+
+    }
 }
 
 class bookingReport implements task //This is technically George's thing, i think...
@@ -132,6 +257,13 @@ class bookingReport implements task //This is technically George's thing, i thin
     private $error = null;
     private $output = null;
     
+    public function test()
+    {
+        echo "<p>Testing ".$this->name."</p>";
+        echo "<p>".$this->getNameTest()."</p>";
+        echo "<p>".$this->getErrorTest()."</p>";
+        echo "<p>".$this->getOutputTest()."</p>";
+    }
     public function getName()
     {
         return $this->$name;
@@ -160,6 +292,38 @@ class bookingReport implements task //This is technically George's thing, i thin
         {   return $this->$output;}
         else
         {   return $this->$error;   }   //Return an error if we have one instead
+    }
+
+    public function getNameTest()
+    {
+        if ($this->getName() === $this->name )
+        {   return "getName() passed";  }
+        else
+        {   return "getName() failed";  }
+    }
+
+    public function getErrorTest()
+    {
+        $error = "ERROR TEST";
+        $this->error = $error;
+
+        if ($this->getError() === $error)
+        {   return "getError() passed"; }
+        else
+        {   return "getError() failed";  }
+
+    }
+
+    public function getOutputTest()
+    {
+        $output = "ERROR TEST";
+        $this->output = $output;
+
+        if ($this->getOutput() === $output)
+        {   return "getOutput() passed"; }
+        else
+        {   return "getOutput() failed";  }
+
     }
 
 }
