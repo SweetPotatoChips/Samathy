@@ -47,14 +47,15 @@ $long = "1010";
 $location = locationFactory::create($name, $lat, $long);
 $location->test($name, $lat, $long);
 
-$origin = locationFactory('TEST', '42','1010');
-$dest = locationFactory('TEST2','1010','42');
+$origin = locationFactory::create('TEST', '42','1010');
+$dest = locationFactory::create('TEST2','1010','42');
 
 $coachService = coachServiceFactory::create($origin, $dest,'66','88',true);
 
 $coachService->test($origin, $dest, 66,88);
 
 
+echo "<h2>Tests Complete</h2>";
 $UI->showUI();             //Show the initial UI->
 
     //We should have a UI->now. 
