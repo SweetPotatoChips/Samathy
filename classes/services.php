@@ -66,7 +66,7 @@ class addService implements task   //Takes a service object, and adds it to the 
 
     public function getNameTest()
     {
-        if ($this->getName() === $this->name )
+        if ($this->getName() === $this->name && $this->getName() === "add")
         {   return "getName() passed";  }
         else
         {   return "getName() failed";  }
@@ -146,7 +146,7 @@ class amendService  implements task//Takes a field, and some data, and a service
 
     public function getNameTest()
     {
-        if ($this->getName() === $this->name )
+        if ($this->getName() === $this->name && $this->getName() === "amend")
         {   return "getName() passed";  }
         else
         {   return "getName() failed";  }
@@ -220,7 +220,7 @@ class deleteService implements task//Takes a service object, and removes it from
 
     public function getNameTest()
     {
-        if ($this->getName() === $this->name )
+        if ($this->getName() === $this->name && $this->getName() === "delete")
         {   return "getName() passed";  }
         else
         {   return "getName() failed";  }
@@ -296,7 +296,7 @@ class bookingReport implements task //This is technically George's thing, i thin
 
     public function getNameTest()
     {
-        if ($this->getName() === $this->name )
+        if ($this->getName() === $this->name && $this->getName() === "bookingReport")
         {   return "getName() passed";  }
         else
         {   return "getName() failed";  }
