@@ -41,7 +41,7 @@ class location  //Represents a location in the DB
 
     public function getNameTest()
     {
-        if ($this->getName === $this->name)
+        if ($this->getName() === $this->name)
         {   return "getName() passed";  }
         else
         {   return "getName() failed";  }
@@ -58,10 +58,10 @@ class location  //Represents a location in the DB
 
     public function checkInput($n, $lt, $lng)
     {
-        if ($this->name === $n && $this->lat === lt && $this->long === lng)
+        if ($this->name === $n && $this->latitude === lt && $this->longditude === lng)
         {   return "inputs valid. Location Factory passed"; }
         else
-        {   return "Inputs invalid. Location Factory failed";   }
+        {   return "Inputs invalid. Location Factory failed"; }
     }
 
                 
